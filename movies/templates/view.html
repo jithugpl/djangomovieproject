@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<table class="table" style="width:100px">
+    <tr>
+        <td rowspan="6" ><img src="{{movie.cover.url}}"></td>
+    </tr>
+    <tr>
+        <td>{{movie.name}}</td>
+    </tr>
+    <tr>
+        <td>{{movie.year}}</td>
+    </tr>
+    <tr>
+        <td>{{movie.details}}</td>
+    </tr>
+    <tr>
+        <td><a class="btn btn-warning" href="{% url 'editmovie' movie.id %}">Update</a></td>
+    </tr>
+    <tr>
+        <td><a class="btn btn-danger" href="{% url 'deletemovie' movie.id %}">Delete</a></td>
+    </tr>
+</table>
+
+{% endblock %}
